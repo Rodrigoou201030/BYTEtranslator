@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Traductor de español e inglés con MyMemory Translation API.">
+    <title>BYTEtranslator</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="top-header">
+            <div class="brand-area">
+                <p class="eyebrow">LEARNING EXPO • 2026</p>
+                <h1 class="brand-title"><span>BYTE</span>translator</h1>
+                <p class="subtitle">Traduce entre español e inglés de forma rápida y sencilla.</p>
+            </div>
+
+            <div class="theme-picker">
+                <button id="theme-btn" class="secondary-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Elegir degradado">
+                    🎨 Elegir degradado
+                </button>
+                <div id="gradient-palette" class="gradient-palette" role="menu" aria-label="Paleta de degradados">
+                    <button class="gradient-option active" type="button" data-gradient="ocean" data-label="Océano" role="menuitem" aria-label="Degradado Océano">
+                        <span class="swatch swatch-ocean"></span><span>Océano</span>
+                    </button>
+                    <button class="gradient-option" type="button" data-gradient="sunset" data-label="Atardecer" role="menuitem" aria-label="Degradado Atardecer">
+                        <span class="swatch swatch-sunset"></span><span>Atardecer</span>
+                    </button>
+                    <button class="gradient-option" type="button" data-gradient="violet" data-label="Violeta" role="menuitem" aria-label="Degradado Violeta">
+                        <span class="swatch swatch-violet"></span><span>Violeta</span>
+                    </button>
+                    <button class="gradient-option" type="button" data-gradient="emerald" data-label="Esmeralda" role="menuitem" aria-label="Degradado Esmeralda">
+                        <span class="swatch swatch-emerald"></span><span>Esmeralda</span>
+                    </button>
+                    <button class="gradient-option" type="button" data-gradient="berry" data-label="Frambuesa" role="menuitem" aria-label="Degradado Frambuesa">
+                        <span class="swatch swatch-berry"></span><span>Frambuesa</span>
+                    </button>
+                    <button class="gradient-option" type="button" data-gradient="midnight" data-label="Medianoche" role="menuitem" aria-label="Degradado Medianoche">
+                        <span class="swatch swatch-midnight"></span><span>Medianoche</span>
+                    </button>
+                    <label class="gradient-custom" for="custom-gradient-color" title="Elegir color personalizado" role="menuitem">
+                        <span class="custom-swatch">＋</span>
+                        <span>Personalizado</span>
+                        <input id="custom-gradient-color" type="color" value="#5e2129" aria-label="Elegir color personalizado">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="language-controls" aria-label="Controles de idioma">
+            <div class="language-chip">
+                <span class="language-label">De</span>
+                <strong id="source-lang">Español</strong>
+            </div>
+
+            <button id="swap-btn" class="swap-btn" type="button" aria-label="Intercambiar idiomas">
+                ⇄
+            </button>
+
+            <div class="language-chip">
+                <span class="language-label">A</span>
+                <strong id="target-lang">Inglés</strong>
+            </div>
+        </div>
+</header>
+
+    <main class="translator" aria-label="Traductor">
+        <section class="translator-card">
+            <div class="card-header">
+                <div>
+                    <p class="card-kicker">Texto original</p>
+                    <h2 id="source-title">Español</h2>
+                </div>
+                <button id="clear-btn" class="text-btn" type="button">Limpiar</button>
+            </div>
+
+            <textarea
+                id="source-text"
+                placeholder="Escribe aquí el texto que deseas traducir..."
+                maxlength="5000"
+                spellcheck="true"
+                aria-label="Texto original"></textarea>
+
+            <div class="card-footer">
+                <span id="char-count">0 / 5000</span>
+                <span>MyMemory</span>
+            </div>
+        </section>
+
+        <div class="action-column">
+            <button id="translate-btn" class="translate-btn" type="button">
+                <span id="translate-icon">Translate</span>
+                <span aria-hidden="true">→</span>
+            </button>
+            <p id="status-text" class="status-text" role="status" aria-live="polite"></p>
+        </div>
+
+        <section class="translator-card">
+            <div class="card-header">
+                <div>
+                    <p class="card-kicker">Traducción</p>
+                    <h2 id="target-title">Inglés</h2>
+                </div>
+                <button id="copy-btn" class="text-btn" type="button">Copiar</button>
+            </div>
+
+            <textarea
+                id="target-text"
+                placeholder="La traducción aparecerá aquí..."
+                readonly
+                aria-label="Traducción"></textarea>
+
+            <div class="card-footer">
+                <span id="translation-state">Listo para traducir</span>
+                <span>API</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-title">Learning Expo © 2026</p>
+        <p>Benjamin Amaya · Mateo David · Rodrigo Salazar</p>
+        <p class="footer-note">Proyecto escolar de traducción con MyMemory.</p>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
